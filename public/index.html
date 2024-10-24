@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestige Detail - Premium Auto Detailing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        nav {
+            background: #1a1a1a;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 1.5rem;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00a8ff;
+        }
+
+        .section {
+            padding: 5rem 2rem;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('images/pic-prestige-website01.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            margin-top: -5rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .btn-primary {
+            background: #00a8ff;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #0097e6;
+            transform: translateY(-2px);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .service-img {
+            height: 200px;
+            background: url('https://images.unsplash.com/photo-1610647752706-3bb12232b3ab?q=80&w=2525&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+        }
+
+        .service-content {
+            padding: 2rem;
+        }
+
+        .price {
+            font-size: 1.25rem;
+            color: #00a8ff;
+            margin: 1rem 0;
+            font-weight: 700;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: url('https://images.unsplash.com/photo-1610647752706-3bb12232b3ab?q=80&w=2525&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 4rem 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <a href="#" class="logo">Prestige Detail</a>
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="section hero">
+        <div class="hero-content">
+            <h1>Drive Clean, Shine Bright</h1>
+            <p>Experience the Ultimate Detailing for Your Ride!</p>
+            <a href="#contact" class="btn btn-primary">Book Now</a>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-img"></div>
+                <div class="service-content">
+                    <h3>Signature Detail</h3>
+                    <p>Complete interior and exterior detailing with premium products and paint protection.</p>
+                    <div class="price">From $299</div>
+                    <a href="#contact" class="btn btn-primary">Book Service</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-img"></div>
+                <div class="service-content">
+                    <h3>Ceramic Coating</h3>
+                    <p>Professional-grade ceramic coating for ultimate paint protection and glossy finish.</p>
+                    <div class="price">From $899</div>
+                    <a href="#contact" class="btn btn-primary">Book Service</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-img"></div>
+                <div class="service-content">
+                    <h3>Paint Correction</h3>
+                    <p>Professional paint correction to remove swirls, scratches, and imperfections.</p>
+                    <div class="price">From $499</div>
+                    <a href="#contact" class="btn btn-primary">Book Service</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section features">
+        <h2 class="section-title">Why Choose Us</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <h3>Premium Quality</h3>
+                <p>Using only the finest products and techniques</p>
+            </div>
+            <div class="feature-item">
+                <h3>Time Efficient</h3>
+                <p>Quick turnaround without compromising quality</p>
+            </div>
+            <div class="feature-item">
+                <h3>Fully Insured</h3>
+                <p>Your vehicle is protected while in our care</p>
+            </div>
+            <div class="feature-item">
+                <h3>5-Star Service</h3>
+                <p>Consistent excellence in every detail</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="section">
+        <h2 class="section-title">Our Work</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="/api/placeholder/400/300" alt="Detail work 1">
+            </div>
+            <div class="gallery-item">
+                <img src="/api/placeholder/400/300" alt="Detail work 2">
+            </div>
+            <div class="gallery-item">
+                <img src="/api/placeholder/400/300" alt="Detail work 3">
+            </div>
+            <div class="gallery-item">
+                <img src="/api/placeholder/400/300" alt="Detail work 4">
+            </div>
+            <div class="gallery-item">
+                <img src="/api/placeholder/400/300" alt="Detail work 5">
+            </div>
+            <div class="gallery-item">
+                <img src="/api/placeholder/400/300" alt="Detail work 6">
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="section">
+        <h2 class="section-title">Client Testimonials</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    "Absolutely amazing service! My car looks better than when I first bought it. The attention to detail is remarkable."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-img"></div>
+                    <div>
+                        <h4>John Smith</h4>
+                        <p>BMW M3 Owner</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    "Professional, courteous, and detail-oriented. The ceramic coating they applied has kept my car looking new for months!"
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-img"></div>
+                    <div>
+                        <h4>Sarah Johnson</h4>
+                        <p>Tesla Model S Owner</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    "Best detailing service in the area! They transformed my 10-year-old car into something that looks showroom new."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-img"></div>
+                    <div>
+                        <h4>Michael Brown</h4>
+                        <p>Porsche 911 Owner</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2 class="section-title">Book Your Service</h2>
+        <div class="contact-container">
+            <form class="form-grid">
+                <div class="form-group">
+                    <input type="text" placeholder="First Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Last Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Vehicle Make" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Vehicle Model" required>
+                </div>
+                <div class="form-group full">
+                    <select required>
+                        <option value="">Select Service</option>
+                        <option>Signature Detail</option>
+                        <option>Ceramic Coating</option>
+                        <option>Paint Correction</option>
+                        <option>Interior Detail</option>
+                        <option>Exterior Detail</option>
+                    </select>
+                </div>
+                <div class="form-group full">
+                    <textarea placeholder="Additional Notes" rows="4"></textarea>
+                </div>
+                <div class="form-group full">
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Schedule Appointment</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Prestige Detail is committed to providing the highest quality automotive detailing services. With years of experience and dedication to excellence, we treat every vehicle as if it were our own.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="YouTube">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="#services" style="color: #fff; text-decoration: none; display: block; margin: 0.5rem 0;">Services</a></li>
+                    <li><a href="#gallery" style="color: #fff; text-decoration: none; display: block; margin: 0.5rem 0;">Gallery</a></li>
+                    <li><a href="#testimonials" style="color: #fff; text-decoration: none; display: block; margin: 0.5rem 0;">Testimonials</a></li>
+                    <li><a href="#contact" style="color: #fff; text-decoration: none; display: block; margin: 0.5rem 0;">Book Now</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin: 0.5rem 0;">📍 123 Detail Street, City, ST 12345</li>
+                    <li style="margin: 0.5rem 0;">📞 (555) 123-4567</li>
+                    <li style="margin: 0.5rem 0;">✉️ info@prestigedetail.com</li>
+                    <li style="margin: 0.5rem 0;">🕒 Mon-Sat: 8:00 AM - 6:00 PM</li>
+                </ul>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
+            © 2024 Prestige Detail. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
