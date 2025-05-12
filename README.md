@@ -1,6 +1,20 @@
 # Prestige Detail Website
 
-A modern, responsive website for a premium auto detailing service.
+<div align="center">
+  <img src="public/images/pic-prestige-website01.jpg" alt="Prestige Detail Hero Image" width="100%">
+  <h3>Premium Auto Detailing Services</h3>
+  <p>Experience the ultimate in automotive care with our professional detailing services</p>
+</div>
+
+## Overview
+
+A modern, responsive website for a premium auto detailing service, featuring:
+
+- Professional service packages
+- Online booking system
+- Responsive design
+- Modern UI/UX
+- Fast loading static site
 
 ## Deployment
 
@@ -79,6 +93,16 @@ The website is built using:
 - CSS3
 - JavaScript
 - Nginx (for serving static files)
+
+### Features
+
+- Responsive design for all devices
+- Modern, clean UI
+- Interactive service cards
+- Online booking system
+- Service package calculator
+- Professional photo gallery
+- Contact form with validation
 
 ## License
 
