@@ -1,0 +1,29 @@
+# Version control
+.git
+.gitignore
+
+# Node.js files (since we're not using them in the container)
+node_modules
+package*.json
+server.js
+
+# Environment variables
+.env
+.env.*
+
+# Development files
+README.md
+Dockerfile
+.dockerignore
+
+# OS files
+.DS_Store
+*.log
+
+# IDE files
+.idea
+.vscode
+
+# Backend files
+server/
+*.json 
