@@ -1,10 +1,17 @@
 # Prestige Detail Website
 
-<div align="center">
-  <img src="public/images/pic-prestige-website01.jpg" alt="Prestige Detail Hero Image" width="100%">
-  <h3>Premium Auto Detailing Services</h3>
-  <p>Experience the ultimate in automotive care with our professional detailing services</p>
-</div>
+<p align="center">
+  <img src="public/images/pic-prestige-website01.jpg" alt="Prestige Detail Website Screenshot" width="100%" />
+</p>
+
+<h1 align="center">Premium Auto Detailing Services</h1>
+<p align="center">Experience the ultimate in automotive care with our professional detailing services</p>
+
+<p align="center">
+  <a href="#deployment">
+    <img src="https://img.shields.io/badge/BOOK%20NOW-%E2%86%92-00a8ff?style=for-the-badge" alt="Book Now" />
+  </a>
+</p>
 
 ## Overview
 
