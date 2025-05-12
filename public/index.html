@@ -15,445 +15,618 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="css/tailwind.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      :root {
+        --primary: #00a8ff;
+        --primary-dark: #0097e6;
+        --secondary: #2d3436;
+        --accent: #fd79a8;
+        --light: #f5f5f5;
+        --dark: #2d3436;
+        --gray: #b2bec3;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        line-height: 1.6;
+        color: var(--dark);
+        background: var(--light);
+      }
+
+      /* Navigation */
+      nav {
+        background: rgba(26, 26, 26, 0.98);
+        padding: 1rem;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+      }
+
+      nav.scrolled {
+        padding: 0.5rem 1rem;
+        background: rgba(26, 26, 26, 0.98);
+      }
+
+      .nav-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        color: #fff;
+        font-size: 1.5rem;
+        text-decoration: none;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .logo i {
+        color: var(--primary);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        transition: all 0.3s;
+        font-weight: 500;
+        position: relative;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--primary);
+        transition: width 0.3s;
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("images/pic-prestige-website01.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        padding: 0 2rem;
+      }
+
+      .hero-content {
+        max-width: 800px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+        font-weight: 700;
+      }
+
+      .hero p {
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        margin-bottom: 2rem;
+        opacity: 0.9;
+      }
+
+      /* Buttons */
+      .btn {
+        display: inline-block;
+        padding: 1rem 2rem;
+        text-decoration: none;
+        border-radius: 50px;
+        transition: all 0.3s;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.9rem;
+      }
+
+      .btn-primary {
+        background: var(--primary);
+        color: #fff;
+        box-shadow: 0 4px 15px rgba(0, 168, 255, 0.3);
+      }
+
+      .btn-primary:hover {
+        background: var(--primary-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 168, 255, 0.4);
+      }
+
+      /* Sections */
+      .section {
+        padding: 8rem 2rem;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 4rem;
+        font-size: clamp(2rem, 4vw, 2.5rem);
+        position: relative;
+        padding-bottom: 1rem;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--primary);
+      }
+
+      /* Services */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .service-card {
+        background: #fff;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .service-img {
+        height: 250px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .service-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+
+      .service-card:hover .service-img img {
+        transform: scale(1.1);
+      }
+
+      .service-content {
+        padding: 2rem;
+      }
+
+      .service-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--dark);
+      }
+
+      .price {
+        font-size: 1.5rem;
+        color: var(--primary);
+        margin: 1rem 0;
+        font-weight: 700;
+      }
+
+      /* Features */
+      .features-section {
+        background: var(--dark);
+        color: #fff;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .feature-item {
+        text-align: center;
+        padding: 3rem 2rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s;
+      }
+
+      .feature-item:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .feature-item i {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+      }
+
+      /* Contact Form */
+      .contact-container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 3rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+
+      .form-group.full {
+        grid-column: 1 / -1;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 1rem;
+        border: 2px solid var(--gray);
+        border-radius: 10px;
+        font-family: "Inter", sans-serif;
+        transition: all 0.3s;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(0, 168, 255, 0.1);
+      }
+
+      /* Footer */
+      footer {
+        background: var(--dark);
+        color: #fff;
+        padding: 4rem 2rem;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .footer-section h3 {
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .social-links a {
+        color: #fff;
+        font-size: 1.5rem;
+        transition: color 0.3s;
+      }
+
+      .social-links a:hover {
+        color: var(--primary);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .section {
+          padding: 4rem 1rem;
+        }
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-fadeInUp {
+        animation: fadeInUp 0.6s ease-out;
+      }
+
+      /* Add this CSS to the style section */
+      .service-features {
+        list-style: none;
+        padding: 0;
+        margin: 1.5rem 0;
+      }
+
+      .service-features li {
+        margin: 0.5rem 0;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .service-features i {
+        color: var(--primary);
+        font-size: 0.9rem;
+      }
+
+      .service-card p {
+        color: #666;
+        margin-bottom: 1rem;
+      }
+    </style>
   </head>
-  <body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav
-      class="fixed w-full z-50 bg-secondary/95 backdrop-blur-sm transition-all duration-300"
-    >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16">
-          <a
-            href="#"
-            class="flex items-center space-x-2 text-white text-xl font-bold"
-          >
-            <i class="fas fa-car-side text-primary"></i>
-            <span>Prestige Detail</span>
-          </a>
-
-          <div class="hidden md:flex items-center space-x-8">
-            <a href="#home" class="nav-link">Home</a>
-            <a href="#services" class="nav-link">Services</a>
-            <a href="#gallery" class="nav-link">Gallery</a>
-            <a href="#about" class="nav-link">About</a>
-            <a href="#contact" class="nav-link">Contact</a>
-          </div>
-
-          <button class="md:hidden text-white">
-            <i class="fas fa-bars text-2xl"></i>
-          </button>
+  <body>
+    <nav>
+      <div class="nav-content">
+        <a href="#" class="logo">
+          <i class="fas fa-car-side"></i>
+          Prestige Detail
+        </a>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
         </div>
       </div>
     </nav>
 
-    <!-- Mobile Menu -->
-    <div
-      class="md:hidden bg-secondary/95 fixed inset-0 z-40 transform translate-x-full transition-transform duration-300"
-    >
-      <div class="flex flex-col items-center justify-center h-full space-y-8">
-        <a href="#home" class="nav-link text-xl">Home</a>
-        <a href="#services" class="nav-link text-xl">Services</a>
-        <a href="#gallery" class="nav-link text-xl">Gallery</a>
-        <a href="#about" class="nav-link text-xl">About</a>
-        <a href="#contact" class="nav-link text-xl">Contact</a>
-      </div>
-    </div>
-
-    <!-- Hero Section -->
-    <section
-      id="home"
-      class="relative h-screen flex items-center justify-center text-white"
-    >
-      <div class="absolute inset-0 bg-black/70 z-10"></div>
-      <div class="absolute inset-0 z-0">
-        <img
-          src="images/pic-prestige-website01.jpg"
-          alt="Luxury car detailing"
-          class="w-full h-full object-cover"
-        />
-      </div>
-      <div
-        class="relative z-20 text-center max-w-4xl px-4 sm:px-6 lg:px-8"
-        data-aos="fade-up"
-      >
-        <h1
-          class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6"
-        >
-          Premium Auto Detailing Services
-        </h1>
-        <p class="text-lg sm:text-xl md:text-2xl text-gray-200 mb-8">
+    <section class="hero">
+      <div class="hero-content" data-aos="fade-up">
+        <h1>Premium Auto Detailing Services</h1>
+        <p>
           Experience the ultimate in automotive care with our professional
           detailing services
         </p>
-        <a href="#contact" class="btn btn-primary">
-          Book Now
-          <i class="fas fa-arrow-right ml-2"></i>
-        </a>
+        <a href="#contact" class="btn btn-primary">Book Now</a>
       </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2
-          class="text-3xl md:text-4xl font-bold text-center mb-4"
-          data-aos="fade-up"
-        >
-          Our Services
-        </h2>
-        <div class="h-1 w-20 bg-primary mx-auto mb-12 rounded-full"></div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Basic Detail Card -->
-          <div
-            class="service-card group"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div class="relative overflow-hidden">
-              <img
-                src="images/service1.jpg"
-                alt="Basic Detail"
-                class="service-image"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 group-hover:opacity-100 transition-opacity duration-300"
-              ></div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-2xl font-semibold mb-3">Basic Detail</h3>
-              <p class="text-gray-600 mb-4">
-                Professional exterior wash, tire shine, interior vacuum, and
-                basic cleaning. Perfect for regular maintenance.
-              </p>
-              <ul class="space-y-2 mb-6">
-                <li class="flex items-center text-gray-700">
-                  <i class="fas fa-check text-primary mr-2"></i>
-                  Hand wash exterior
-                </li>
-                <li class="flex items-center text-gray-700">
-                  <i class="fas fa-check text-primary mr-2"></i>
-                  Wheel cleaning
-                </li>
-                <li class="flex items-center text-gray-700">
-                  <i class="fas fa-check text-primary mr-2"></i>
-                  Interior vacuum
-                </li>
-                <li class="flex items-center text-gray-700">
-                  <i class="fas fa-check text-primary mr-2"></i>
-                  Dashboard & console wipe
-                </li>
-              </ul>
-              <div class="text-2xl font-bold text-primary mb-6">From $99</div>
-              <a href="#contact" class="btn btn-primary w-full">Book Now</a>
-            </div>
+    <section id="services" class="section">
+      <h2 class="section-title" data-aos="fade-up">Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-img">
+            <img
+              src="images/service1.jpg"
+              alt="Basic Detail - Exterior Wash and Interior Clean"
+            />
           </div>
-
-          <!-- Premium Detail Card -->
-          <div
-            class="service-card group"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <div class="relative overflow-hidden">
-              <img
-                src="images/service2.jpg"
-                alt="Premium Detail"
-                class="service-image"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 group-hover:opacity-100 transition-opacity duration-300"
-              ></div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-2xl font-semibold mb-3">Premium Detail</h3>
-              <p class="text-gray-600 mb-4">
-                Complete exterior and interior detailing with paint correction,
-                waxing, and deep interior cleaning.
-              </p>
-              <ul class="space-y-2 mb-6">
-                <li class="flex items-center text-gray-700">
-                  <i class="fas fa-check text-primary mr-2"></i>
-                  All Basic Detail services
-                </li>
-                <li class="flex items-center text-gray-700">
-                  <i class="fas fa-check text-primary mr-2"></i>
-                  Clay bar treatment
-                </li>
-                <li class="flex items-center text-gray-700">
-                  <i class="fas fa-check text-primary mr-2"></i>
-                  Paint correction
-                </li>
-                <li class="flex items-center text-gray-700">
-                  <i class="fas fa-check text-primary mr-2"></i>
-                  Leather conditioning
-                </li>
-              </ul>
-              <div class="text-2xl font-bold text-primary mb-6">From $199</div>
-              <a href="#contact" class="btn btn-primary w-full">Book Now</a>
-            </div>
+          <div class="service-content">
+            <h3>Basic Detail</h3>
+            <p>
+              Professional exterior wash, tire shine, interior vacuum, and basic
+              cleaning. Perfect for regular maintenance.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Hand wash exterior</li>
+              <li><i class="fas fa-check"></i> Wheel cleaning</li>
+              <li><i class="fas fa-check"></i> Interior vacuum</li>
+              <li><i class="fas fa-check"></i> Dashboard & console wipe</li>
+            </ul>
+            <div class="price">From $99</div>
+            <a href="#contact" class="btn btn-primary">Book Now</a>
           </div>
-
-          <!-- Ultimate Detail Card -->
-          <div
-            class="service-card group"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <div class="relative overflow-hidden">
-              <img
-                src="images/service3.jpg"
-                alt="Ultimate Detail"
-                class="service-image"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 group-hover:opacity-100 transition-opacity duration-300"
-              ></div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-2xl font-semibold mb-3">Ultimate Detail</h3>
-              <p class="text-gray-600 mb-4">
-                The ultimate in paint protection and interior restoration.
-                Includes ceramic coating for long-lasting shine.
-              </p>
-              <ul class="space-y-2 mb-6">
-                <li class="flex items-center text-gray-700">
-                  <i class="fas fa-check text-primary mr-2"></i>
-                  All Premium Detail services
-                </li>
-                <li class="flex items-center text-gray-700">
-                  <i class="fas fa-check text-primary mr-2"></i>
-                  Ceramic coating
-                </li>
-                <li class="flex items-center text-gray-700">
-                  <i class="fas fa-check text-primary mr-2"></i>
-                  Paint sealant
-                </li>
-                <li class="flex items-center text-gray-700">
-                  <i class="fas fa-check text-primary mr-2"></i>
-                  Full interior restoration
-                </li>
-              </ul>
-              <div class="text-2xl font-bold text-primary mb-6">From $399</div>
-              <a href="#contact" class="btn btn-primary w-full">Book Now</a>
-            </div>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-img">
+            <img
+              src="images/service2.jpg"
+              alt="Premium Detail - Paint Correction and Interior Deep Clean"
+            />
+          </div>
+          <div class="service-content">
+            <h3>Premium Detail</h3>
+            <p>
+              Complete exterior and interior detailing with paint correction,
+              waxing, and deep interior cleaning.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> All Basic Detail services</li>
+              <li><i class="fas fa-check"></i> Clay bar treatment</li>
+              <li><i class="fas fa-check"></i> Paint correction</li>
+              <li><i class="fas fa-check"></i> Leather conditioning</li>
+            </ul>
+            <div class="price">From $199</div>
+            <a href="#contact" class="btn btn-primary">Book Now</a>
+          </div>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-img">
+            <img
+              src="images/service3.jpg"
+              alt="Ultimate Detail - Ceramic Coating and Full Restoration"
+            />
+          </div>
+          <div class="service-content">
+            <h3>Ultimate Detail</h3>
+            <p>
+              The ultimate in paint protection and interior restoration.
+              Includes ceramic coating for long-lasting shine.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> All Premium Detail services</li>
+              <li><i class="fas fa-check"></i> Ceramic coating</li>
+              <li><i class="fas fa-check"></i> Paint sealant</li>
+              <li><i class="fas fa-check"></i> Full interior restoration</li>
+            </ul>
+            <div class="price">From $399</div>
+            <a href="#contact" class="btn btn-primary">Book Now</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="py-20 bg-secondary text-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2
-          class="text-3xl md:text-4xl font-bold text-center mb-4"
-          data-aos="fade-up"
-        >
-          Why Choose Us
-        </h2>
-        <div class="h-1 w-20 bg-primary mx-auto mb-12 rounded-full"></div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div
-            class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 text-center transition-transform duration-300 hover:-translate-y-2"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <i class="fas fa-award text-4xl text-primary mb-4"></i>
-            <h3 class="text-xl font-semibold mb-2">Expert Service</h3>
-            <p class="text-gray-300">
-              Professional detailers with years of experience
-            </p>
-          </div>
-
-          <div
-            class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 text-center transition-transform duration-300 hover:-translate-y-2"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <i class="fas fa-clock text-4xl text-primary mb-4"></i>
-            <h3 class="text-xl font-semibold mb-2">Time Efficient</h3>
-            <p class="text-gray-300">
-              Quick turnaround without compromising quality
-            </p>
-          </div>
-
-          <div
-            class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 text-center transition-transform duration-300 hover:-translate-y-2"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <i class="fas fa-star text-4xl text-primary mb-4"></i>
-            <h3 class="text-xl font-semibold mb-2">Premium Products</h3>
-            <p class="text-gray-300">
-              Using only the highest quality detailing products
-            </p>
-          </div>
+    <section class="section features-section">
+      <h2 class="section-title" data-aos="fade-up">Why Choose Us</h2>
+      <div class="features-grid">
+        <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
+          <i class="fas fa-award"></i>
+          <h3>Expert Service</h3>
+          <p>Professional detailers with years of experience</p>
+        </div>
+        <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+          <i class="fas fa-clock"></i>
+          <h3>Time Efficient</h3>
+          <p>Quick turnaround without compromising quality</p>
+        </div>
+        <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+          <i class="fas fa-star"></i>
+          <h3>Premium Products</h3>
+          <p>Using only the highest quality detailing products</p>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2
-          class="text-3xl md:text-4xl font-bold text-center mb-4"
-          data-aos="fade-up"
-        >
-          Book an Appointment
-        </h2>
-        <div class="h-1 w-20 bg-primary mx-auto mb-12 rounded-full"></div>
-
-        <div class="max-w-3xl mx-auto">
-          <div class="bg-white rounded-2xl shadow-xl p-8" data-aos="fade-up">
-            <form id="booking-form" class="space-y-6">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="relative">
-                  <input
-                    type="text"
-                    id="firstName"
-                    name="firstName"
-                    placeholder=" "
-                    required
-                    class="form-input"
-                  />
-                  <label for="firstName" class="form-label">First Name</label>
-                </div>
-
-                <div class="relative">
-                  <input
-                    type="text"
-                    id="lastName"
-                    name="lastName"
-                    placeholder=" "
-                    required
-                    class="form-input"
-                  />
-                  <label for="lastName" class="form-label">Last Name</label>
-                </div>
-
-                <div class="relative">
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder=" "
-                    required
-                    class="form-input"
-                  />
-                  <label for="email" class="form-label">Email</label>
-                </div>
-
-                <div class="relative">
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    placeholder=" "
-                    required
-                    class="form-input"
-                  />
-                  <label for="phone" class="form-label">Phone</label>
-                </div>
-
-                <div class="relative">
-                  <input
-                    type="text"
-                    id="vehicleMake"
-                    name="vehicleMake"
-                    placeholder=" "
-                    required
-                    class="form-input"
-                  />
-                  <label for="vehicleMake" class="form-label"
-                    >Vehicle Make</label
-                  >
-                </div>
-
-                <div class="relative">
-                  <input
-                    type="text"
-                    id="vehicleModel"
-                    name="vehicleModel"
-                    placeholder=" "
-                    required
-                    class="form-input"
-                  />
-                  <label for="vehicleModel" class="form-label"
-                    >Vehicle Model</label
-                  >
-                </div>
-              </div>
-
-              <div class="relative">
-                <select id="service" name="service" required class="form-input">
-                  <option value="">Select a service</option>
-                  <option value="basic">Basic Detail</option>
-                  <option value="premium">Premium Detail</option>
-                  <option value="ultimate">Ultimate Detail</option>
-                </select>
-                <label for="service" class="form-label">Service Type</label>
-              </div>
-
-              <div class="relative">
-                <textarea
-                  id="notes"
-                  name="notes"
-                  rows="4"
-                  placeholder=" "
-                  class="form-input"
-                ></textarea>
-                <label for="notes" class="form-label">Additional Notes</label>
-              </div>
-
-              <button type="submit" class="btn btn-primary w-full">
+    <section id="contact" class="section">
+      <h2 class="section-title" data-aos="fade-up">Book an Appointment</h2>
+      <div class="contact-container" data-aos="fade-up">
+        <form id="booking-form">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName" required />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" required />
+            </div>
+            <div class="form-group">
+              <label for="vehicleMake">Vehicle Make</label>
+              <input type="text" id="vehicleMake" name="vehicleMake" required />
+            </div>
+            <div class="form-group">
+              <label for="vehicleModel">Vehicle Model</label>
+              <input
+                type="text"
+                id="vehicleModel"
+                name="vehicleModel"
+                required
+              />
+            </div>
+            <div class="form-group full">
+              <label for="service">Service Type</label>
+              <select id="service" name="service" required>
+                <option value="">Select a service</option>
+                <option value="basic">Basic Detail</option>
+                <option value="premium">Premium Detail</option>
+                <option value="ultimate">Ultimate Detail</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label for="notes">Additional Notes</label>
+              <textarea id="notes" name="notes" rows="4"></textarea>
+            </div>
+            <div class="form-group full">
+              <button type="submit" class="btn btn-primary">
                 Book Appointment
               </button>
-            </form>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-secondary text-white py-12">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <h3 class="text-xl font-semibold mb-4 text-primary">Contact Us</h3>
-            <p class="mb-2">Email: info@prestigedetail.com</p>
-            <p class="mb-2">Phone: (555) 123-4567</p>
-            <p>Address: 123 Detail Street, City, State 12345</p>
-          </div>
-
-          <div>
-            <h3 class="text-xl font-semibold mb-4 text-primary">Follow Us</h3>
-            <div class="flex space-x-4">
-              <a href="#" class="text-2xl hover:text-primary transition-colors">
-                <i class="fab fa-facebook"></i>
-              </a>
-              <a href="#" class="text-2xl hover:text-primary transition-colors">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="#" class="text-2xl hover:text-primary transition-colors">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </div>
-          </div>
-
-          <div>
-            <h3 class="text-xl font-semibold mb-4 text-primary">Hours</h3>
-            <p class="mb-2">Monday - Friday: 8am - 6pm</p>
-            <p class="mb-2">Saturday: 9am - 4pm</p>
-            <p>Sunday: Closed</p>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: info@prestigedetail.com</p>
+          <p>Phone: (555) 123-4567</p>
+          <p>Address: 123 Detail Street, City, State 12345</p>
+        </div>
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
           </div>
         </div>
-
-        <div
-          class="mt-8 pt-8 border-t border-white/10 text-center text-gray-400"
-        >
-          <p>&copy; 2023 Prestige Detail. All rights reserved.</p>
+        <div class="footer-section">
+          <h3>Hours</h3>
+          <p>Monday - Friday: 8am - 6pm</p>
+          <p>Saturday: 9am - 4pm</p>
+          <p>Sunday: Closed</p>
         </div>
       </div>
     </footer>
