@@ -1,20 +1,19 @@
 {
-  "name": "prestige-detail",
+  "name": "prestige-detailing-website",
   "version": "1.0.0",
-  "description": "Auto detailing business website",
+  "description": "Premium auto detailing website",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
   "dependencies": {
-    "express": "^4.17.1",
-    "mongoose": "^6.0.12",
-    "body-parser": "^1.19.0",
-    "dotenv": "^10.0.0",
-    "nodemailer": "^6.7.0"
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.6.3",
+    "nodemailer": "^6.9.7"
   },
   "devDependencies": {
-    "nodemon": "^2.0.14"
+    "nodemon": "^2.0.22"
   }
 }

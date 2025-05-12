@@ -421,212 +421,310 @@
     </style>
   </head>
   <body>
-    <nav>
-      <div class="nav-content">
-        <a href="#" class="logo">
-          <i class="fas fa-car-side"></i>
-          Prestige Detail
-        </a>
-        <div class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="nav-links">
-          <a href="#home">Home</a>
-          <a href="#services">Services</a>
-          <a href="#gallery">Gallery</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+    <nav class="navbar">
+      <div class="container">
+        <div class="nav-content">
+          <a href="#" class="nav-logo">
+            <i class="fas fa-car-side"></i>
+            <span>Prestige Detail</span>
+          </a>
+
+          <div class="nav-links">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#gallery" class="nav-link">Gallery</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#contact" class="nav-link">Contact</a>
+          </div>
+
+          <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+          </button>
         </div>
       </div>
     </nav>
 
-    <section class="hero">
+    <div class="mobile-menu">
+      <div class="mobile-menu-links">
+        <a href="#home" class="mobile-link">Home</a>
+        <a href="#services" class="mobile-link">Services</a>
+        <a href="#gallery" class="mobile-link">Gallery</a>
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+      </div>
+    </div>
+
+    <section id="home" class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-background">
+        <img
+          src="images/pic-prestige-website01.jpg"
+          alt="Luxury car detailing"
+        />
+      </div>
       <div class="hero-content" data-aos="fade-up">
         <h1>Premium Auto Detailing Services</h1>
         <p>
           Experience the ultimate in automotive care with our professional
           detailing services
         </p>
-        <a href="#contact" class="btn btn-primary">Book Now</a>
+        <a href="#contact" class="btn btn-primary">
+          Book Now
+          <i class="fas fa-arrow-right"></i>
+        </a>
       </div>
     </section>
 
-    <section id="services" class="section">
-      <h2 class="section-title" data-aos="fade-up">Our Services</h2>
-      <div class="services-grid">
-        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="service-img">
-            <img
-              src="images/service1.jpg"
-              alt="Basic Detail - Exterior Wash and Interior Clean"
-            />
-          </div>
-          <div class="service-content">
-            <h3>Basic Detail</h3>
-            <p>
-              Professional exterior wash, tire shine, interior vacuum, and basic
-              cleaning. Perfect for regular maintenance.
-            </p>
-            <ul class="service-features">
-              <li><i class="fas fa-check"></i> Hand wash exterior</li>
-              <li><i class="fas fa-check"></i> Wheel cleaning</li>
-              <li><i class="fas fa-check"></i> Interior vacuum</li>
-              <li><i class="fas fa-check"></i> Dashboard & console wipe</li>
-            </ul>
-            <div class="price">From $99</div>
-            <a href="#contact" class="btn btn-primary">Book Now</a>
-          </div>
-        </div>
-        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="service-img">
-            <img
-              src="images/service2.jpg"
-              alt="Premium Detail - Paint Correction and Interior Deep Clean"
-            />
-          </div>
-          <div class="service-content">
-            <h3>Premium Detail</h3>
-            <p>
-              Complete exterior and interior detailing with paint correction,
-              waxing, and deep interior cleaning.
-            </p>
-            <ul class="service-features">
-              <li><i class="fas fa-check"></i> All Basic Detail services</li>
-              <li><i class="fas fa-check"></i> Clay bar treatment</li>
-              <li><i class="fas fa-check"></i> Paint correction</li>
-              <li><i class="fas fa-check"></i> Leather conditioning</li>
-            </ul>
-            <div class="price">From $199</div>
-            <a href="#contact" class="btn btn-primary">Book Now</a>
-          </div>
-        </div>
-        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="service-img">
-            <img
-              src="images/service3.jpg"
-              alt="Ultimate Detail - Ceramic Coating and Full Restoration"
-            />
-          </div>
-          <div class="service-content">
-            <h3>Ultimate Detail</h3>
-            <p>
-              The ultimate in paint protection and interior restoration.
-              Includes ceramic coating for long-lasting shine.
-            </p>
-            <ul class="service-features">
-              <li><i class="fas fa-check"></i> All Premium Detail services</li>
-              <li><i class="fas fa-check"></i> Ceramic coating</li>
-              <li><i class="fas fa-check"></i> Paint sealant</li>
-              <li><i class="fas fa-check"></i> Full interior restoration</li>
-            </ul>
-            <div class="price">From $399</div>
-            <a href="#contact" class="btn btn-primary">Book Now</a>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section id="services" class="services">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Our Services</h2>
+        <div class="section-divider"></div>
 
-    <section class="section features-section">
-      <h2 class="section-title" data-aos="fade-up">Why Choose Us</h2>
-      <div class="features-grid">
-        <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
-          <i class="fas fa-award"></i>
-          <h3>Expert Service</h3>
-          <p>Professional detailers with years of experience</p>
-        </div>
-        <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
-          <i class="fas fa-clock"></i>
-          <h3>Time Efficient</h3>
-          <p>Quick turnaround without compromising quality</p>
-        </div>
-        <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
-          <i class="fas fa-star"></i>
-          <h3>Premium Products</h3>
-          <p>Using only the highest quality detailing products</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section">
-      <h2 class="section-title" data-aos="fade-up">Book an Appointment</h2>
-      <div class="contact-container" data-aos="fade-up">
-        <form id="booking-form">
-          <div class="form-grid">
-            <div class="form-group">
-              <label for="firstName">First Name</label>
-              <input type="text" id="firstName" name="firstName" required />
-            </div>
-            <div class="form-group">
-              <label for="lastName">Last Name</label>
-              <input type="text" id="lastName" name="lastName" required />
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone</label>
-              <input type="tel" id="phone" name="phone" required />
-            </div>
-            <div class="form-group">
-              <label for="vehicleMake">Vehicle Make</label>
-              <input type="text" id="vehicleMake" name="vehicleMake" required />
-            </div>
-            <div class="form-group">
-              <label for="vehicleModel">Vehicle Model</label>
-              <input
-                type="text"
-                id="vehicleModel"
-                name="vehicleModel"
-                required
+        <div class="services-grid">
+          <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-image-container">
+              <img
+                src="images/service1.jpg"
+                alt="Basic Detail"
+                class="service-image"
               />
             </div>
-            <div class="form-group full">
-              <label for="service">Service Type</label>
-              <select id="service" name="service" required>
-                <option value="">Select a service</option>
-                <option value="basic">Basic Detail</option>
-                <option value="premium">Premium Detail</option>
-                <option value="ultimate">Ultimate Detail</option>
-              </select>
-            </div>
-            <div class="form-group full">
-              <label for="notes">Additional Notes</label>
-              <textarea id="notes" name="notes" rows="4"></textarea>
-            </div>
-            <div class="form-group full">
-              <button type="submit" class="btn btn-primary">
-                Book Appointment
-              </button>
+            <div class="service-content">
+              <h3>Basic Detail</h3>
+              <p>
+                Professional exterior wash, tire shine, interior vacuum, and
+                basic cleaning. Perfect for regular maintenance.
+              </p>
+              <ul class="service-features">
+                <li>
+                  <i class="fas fa-check"></i>
+                  Hand wash exterior
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  Wheel cleaning
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  Interior vacuum
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  Dashboard & console wipe
+                </li>
+              </ul>
+              <div class="service-price">From $99</div>
+              <a href="#contact" class="btn btn-primary btn-full">Book Now</a>
             </div>
           </div>
-        </form>
+
+          <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-image-container">
+              <img
+                src="images/service2.jpg"
+                alt="Premium Detail"
+                class="service-image"
+              />
+            </div>
+            <div class="service-content">
+              <h3>Premium Detail</h3>
+              <p>
+                Complete exterior and interior detailing with paint correction,
+                waxing, and deep interior cleaning.
+              </p>
+              <ul class="service-features">
+                <li>
+                  <i class="fas fa-check"></i>
+                  All Basic Detail services
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  Clay bar treatment
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  Paint correction
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  Leather conditioning
+                </li>
+              </ul>
+              <div class="service-price">From $199</div>
+              <a href="#contact" class="btn btn-primary btn-full">Book Now</a>
+            </div>
+          </div>
+
+          <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-image-container">
+              <img
+                src="images/service3.jpg"
+                alt="Ultimate Detail"
+                class="service-image"
+              />
+            </div>
+            <div class="service-content">
+              <h3>Ultimate Detail</h3>
+              <p>
+                The ultimate in paint protection and interior restoration.
+                Includes ceramic coating for long-lasting shine.
+              </p>
+              <ul class="service-features">
+                <li>
+                  <i class="fas fa-check"></i>
+                  All Premium Detail services
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  Ceramic coating
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  Paint sealant
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>
+                  Full interior restoration
+                </li>
+              </ul>
+              <div class="service-price">From $399</div>
+              <a href="#contact" class="btn btn-primary btn-full">Book Now</a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <footer>
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Contact Us</h3>
-          <p>Email: info@prestigedetail.com</p>
-          <p>Phone: (555) 123-4567</p>
-          <p>Address: 123 Detail Street, City, State 12345</p>
-        </div>
-        <div class="footer-section">
-          <h3>Follow Us</h3>
-          <div class="social-links">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
+    <section class="features">
+      <div class="container">
+        <h2 class="section-title light" data-aos="fade-up">Why Choose Us</h2>
+        <div class="section-divider"></div>
+
+        <div class="features-grid">
+          <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+            <i class="fas fa-award"></i>
+            <h3>Expert Service</h3>
+            <p>Professional detailers with years of experience</p>
+          </div>
+
+          <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-clock"></i>
+            <h3>Time Efficient</h3>
+            <p>Quick turnaround without compromising quality</p>
+          </div>
+
+          <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+            <i class="fas fa-star"></i>
+            <h3>Premium Products</h3>
+            <p>Using only the highest quality detailing products</p>
           </div>
         </div>
-        <div class="footer-section">
-          <h3>Hours</h3>
-          <p>Monday - Friday: 8am - 6pm</p>
-          <p>Saturday: 9am - 4pm</p>
-          <p>Sunday: Closed</p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Book an Appointment</h2>
+        <div class="section-divider"></div>
+
+        <div class="contact-container">
+          <div class="contact-form" data-aos="fade-up">
+            <form id="booking-form">
+              <div class="form-grid">
+                <div class="form-group">
+                  <input type="text" id="firstName" name="firstName" required />
+                  <label for="firstName">First Name</label>
+                </div>
+
+                <div class="form-group">
+                  <input type="text" id="lastName" name="lastName" required />
+                  <label for="lastName">Last Name</label>
+                </div>
+
+                <div class="form-group">
+                  <input type="email" id="email" name="email" required />
+                  <label for="email">Email</label>
+                </div>
+
+                <div class="form-group">
+                  <input type="tel" id="phone" name="phone" required />
+                  <label for="phone">Phone</label>
+                </div>
+
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="vehicleMake"
+                    name="vehicleMake"
+                    required
+                  />
+                  <label for="vehicleMake">Vehicle Make</label>
+                </div>
+
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="vehicleModel"
+                    name="vehicleModel"
+                    required
+                  />
+                  <label for="vehicleModel">Vehicle Model</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <select id="service" name="service" required>
+                  <option value="">Select a service</option>
+                  <option value="basic">Basic Detail</option>
+                  <option value="premium">Premium Detail</option>
+                  <option value="ultimate">Ultimate Detail</option>
+                </select>
+                <label for="service">Service Type</label>
+              </div>
+
+              <div class="form-group">
+                <textarea id="notes" name="notes" rows="4"></textarea>
+                <label for="notes">Additional Notes</label>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-full">
+                Book Appointment
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>Email: info@prestigedetail.com</p>
+            <p>Phone: (555) 123-4567</p>
+            <p>Address: 123 Detail Street, City, State 12345</p>
+          </div>
+
+          <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h3>Hours</h3>
+            <p>Monday - Friday: 8am - 6pm</p>
+            <p>Saturday: 9am - 4pm</p>
+            <p>Sunday: Closed</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2023 Prestige Detail. All rights reserved.</p>
         </div>
       </div>
     </footer>
